@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="22aab37696604a5a814e4ca47d6b2f94" Name="Diagram1">
+        <EntityTypeShape EntityType="dmBiddingModel.action" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.balancedaction" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.bid" Width="1.5" PointX="5.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.bidbox" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.convention" Width="1.5" PointX="0.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.fourcardmajoraction" Width="1.5" PointX="0.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.losingtrickcountrange" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.ltcaction" Width="1.5" PointX="0.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.method" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.opponentbidaction" Width="1.5" PointX="0.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.partnerbidaction" Width="1.5" PointX="0.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.pointrange" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.protectiveaction" Width="1.5" PointX="0.75" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.referencedsuit" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.setting" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.shape" Width="1.5" PointX="3" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.shapeaction" Width="1.5" PointX="0.75" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.shapedetail" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.stage" Width="1.5" PointX="0.75" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.suitaction" Width="1.5" PointX="0.75" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.suitname" Width="1.5" PointX="3" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.suitquality" Width="1.5" PointX="3" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.suitqualityaction" Width="1.5" PointX="0.75" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dmBiddingModel.user" Width="1.5" PointX="3" PointY="28.5" IsExpanded="true" />
+        <AssociationConnector Association="dmBiddingModel.FK__actions__Balance__719CDDE7" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__actions__Convent__6CD828CA" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__actions__FourCar__70A8B9AE" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__actions__ltcActi__72910220" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__actions__Opponen__6DCC4D03" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__actions__Partner__6EC0713C" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__actions__Protect__6BE40491" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__actions__ShapeAc__6AEFE058" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__actions__StageRe__690797E6" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__actions__SuitAct__69FBBC1F" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__actions__SuitQua__6FB49575" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__actions__SystemR__681373AD" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__bids__Balanced__00DF2177" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__bids__BidBoxRef__7B264821" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__bids__Convention__7C1A6C5A" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__bids__FourCardMa__7FEAFD3E" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__bids__ltcRef__7A3223E8" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__bids__PointRange__793DFFAF" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__bids__Protective__7D0E9093" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__bids__ShapeRef__7849DB76" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__bids__StageRef__7755B73D" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__bids__SuitQualit__7EF6D905" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__bids__SuitRef__76619304" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK__bids__SystemRef__756D6ECB" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK_suitquality_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="dmBiddingModel.FK_user_ToTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

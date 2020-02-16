@@ -1,0 +1,1638 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dmBiddingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="action">
+          <Key>
+            <PropertyRef Name="ActionId" />
+          </Key>
+          <Property Name="ActionId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="text" Nullable="false" />
+          <Property Name="MethodRef" Type="int" />
+          <Property Name="StageRef" Type="int" />
+          <Property Name="Sequence" Type="int" Nullable="false" />
+          <Property Name="SuitActionRef" Type="int" />
+          <Property Name="ShapeActionRef" Type="int" />
+          <Property Name="ProtectiveActionRef" Type="int" />
+          <Property Name="ConventionRef" Type="int" />
+          <Property Name="OpponentBidActionRef" Type="int" />
+          <Property Name="PartnerBidActionRef" Type="int" />
+          <Property Name="SuitQualityActionRef" Type="int" />
+          <Property Name="FourCardMajorActionRef" Type="int" />
+          <Property Name="BalancedActionRef" Type="int" />
+          <Property Name="ltcActionRef" Type="int" />
+        </EntityType>
+        <EntityType Name="balancedaction">
+          <Key>
+            <PropertyRef Name="BalancedActionId" />
+          </Key>
+          <Property Name="BalancedActionId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bid">
+          <Key>
+            <PropertyRef Name="BidId" />
+          </Key>
+          <Property Name="BidId" Type="int" Nullable="false" />
+          <Property Name="MethodRef" Type="int" />
+          <Property Name="BidName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="SuitRef" Type="int" />
+          <Property Name="StageRef" Type="int" />
+          <Property Name="ShapeRef" Type="int" />
+          <Property Name="PointRangeRef" Type="int" />
+          <Property Name="ltcRef" Type="int" />
+          <Property Name="BidBoxRef" Type="int" />
+          <Property Name="ConventionRef" Type="int" />
+          <Property Name="Protective" Type="int" />
+          <Property Name="OpponentBidRef" Type="int" Nullable="false" />
+          <Property Name="PartnerBidRef" Type="int" Nullable="false" />
+          <Property Name="SuitQualityRef" Type="int" />
+          <Property Name="FourCardMajorRef" Type="int" />
+          <Property Name="Balanced" Type="int" />
+        </EntityType>
+        <EntityType Name="bidbox">
+          <Key>
+            <PropertyRef Name="BidBoxId" />
+          </Key>
+          <Property Name="BidBoxId" Type="int" Nullable="false" />
+          <Property Name="BidBoxName" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="convention">
+          <Key>
+            <PropertyRef Name="ConventionId" />
+          </Key>
+          <Property Name="ConventionId" Type="int" Nullable="false" />
+          <Property Name="ConventionName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fourcardmajoraction">
+          <Key>
+            <PropertyRef Name="FourCardMajorActionId" />
+          </Key>
+          <Property Name="FourCardMajorActionId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="losingtrickcountrange">
+          <Key>
+            <PropertyRef Name="ltcId" />
+          </Key>
+          <Property Name="ltcId" Type="int" Nullable="false" />
+          <Property Name="ltcDescription" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Min" Type="tinyint" Nullable="false" />
+          <Property Name="Max" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ltcaction">
+          <Key>
+            <PropertyRef Name="ltcActionId" />
+          </Key>
+          <Property Name="ltcActionId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="512" Nullable="false" />
+        </EntityType>
+        <EntityType Name="method">
+          <Key>
+            <PropertyRef Name="MethodId" />
+          </Key>
+          <Property Name="MethodId" Type="int" Nullable="false" />
+          <Property Name="MethodName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MethodDescription" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="opponentbidaction">
+          <Key>
+            <PropertyRef Name="OpponentBidActionId" />
+          </Key>
+          <Property Name="OpponentBidActionId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="partnerbidaction">
+          <Key>
+            <PropertyRef Name="PartnerBidActionId" />
+          </Key>
+          <Property Name="PartnerBidActionId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pointrange">
+          <Key>
+            <PropertyRef Name="PointRangeId" />
+          </Key>
+          <Property Name="PointRangeId" Type="int" Nullable="false" />
+          <Property Name="PointRangeDescription" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Min" Type="tinyint" Nullable="false" />
+          <Property Name="Max" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="protectiveaction">
+          <Key>
+            <PropertyRef Name="ProtectiveActionId" />
+          </Key>
+          <Property Name="ProtectiveActionId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="referencedsuit">
+          <Key>
+            <PropertyRef Name="ReferencedSuitId" />
+          </Key>
+          <Property Name="ReferencedSuitId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="setting">
+          <Key>
+            <PropertyRef Name="SettingsId" />
+          </Key>
+          <Property Name="SettingsId" Type="int" Nullable="false" />
+          <Property Name="UserRef" Type="int" Nullable="false" />
+          <Property Name="SettingName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SettingDescription" Type="text" Nullable="false" />
+          <Property Name="SettingValue" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shape">
+          <Key>
+            <PropertyRef Name="ShapeId" />
+          </Key>
+          <Property Name="ShapeId" Type="int" Nullable="false" />
+          <Property Name="ShapeDescription" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shapeaction">
+          <Key>
+            <PropertyRef Name="ShapeActionId" />
+          </Key>
+          <Property Name="ShapeActionId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shapedetail">
+          <Key>
+            <PropertyRef Name="ShapeDetailID" />
+          </Key>
+          <Property Name="ShapeDetailID" Type="int" Nullable="false" />
+          <Property Name="Content" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ShapeRef" Type="int" Nullable="false" />
+          <Property Name="ShapeSuit" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stage">
+          <Key>
+            <PropertyRef Name="StageId" />
+          </Key>
+          <Property Name="StageId" Type="int" Nullable="false" />
+          <Property Name="StageDescription" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="suitaction">
+          <Key>
+            <PropertyRef Name="SuitActionID" />
+          </Key>
+          <Property Name="SuitActionID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="suitname">
+          <Key>
+            <PropertyRef Name="SuitNameId" />
+          </Key>
+          <Property Name="SuitNameId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="suitquality">
+          <Key>
+            <PropertyRef Name="SuitQualityId" />
+          </Key>
+          <Property Name="SuitQualityId" Type="int" Nullable="false" />
+          <Property Name="MethodRef" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="SuitHCP" Type="int" Nullable="false" />
+          <Property Name="NumberHons" Type="int" Nullable="false" />
+          <Property Name="ReferencedSuitRef" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="suitqualityaction">
+          <Key>
+            <PropertyRef Name="SuitQualityActionId" />
+          </Key>
+          <Property Name="SuitQualityActionId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="MethodRef" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__actions__Balance__719CDDE7">
+          <End Role="balancedaction" Type="Self.balancedaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="balancedaction">
+              <PropertyRef Name="BalancedActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="BalancedActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__Convent__6CD828CA">
+          <End Role="convention" Type="Self.convention" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="convention">
+              <PropertyRef Name="ConventionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="ConventionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__FourCar__70A8B9AE">
+          <End Role="fourcardmajoraction" Type="Self.fourcardmajoraction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fourcardmajoraction">
+              <PropertyRef Name="FourCardMajorActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="FourCardMajorActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__ltcActi__72910220">
+          <End Role="ltcaction" Type="Self.ltcaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltcaction">
+              <PropertyRef Name="ltcActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="ltcActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__Opponen__6DCC4D03">
+          <End Role="opponentbidaction" Type="Self.opponentbidaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opponentbidaction">
+              <PropertyRef Name="OpponentBidActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="OpponentBidActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__Partner__6EC0713C">
+          <End Role="partnerbidaction" Type="Self.partnerbidaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="partnerbidaction">
+              <PropertyRef Name="PartnerBidActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="PartnerBidActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__Protect__6BE40491">
+          <End Role="protectiveaction" Type="Self.protectiveaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="protectiveaction">
+              <PropertyRef Name="ProtectiveActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="ProtectiveActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__ShapeAc__6AEFE058">
+          <End Role="shapeaction" Type="Self.shapeaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shapeaction">
+              <PropertyRef Name="ShapeActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="ShapeActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__StageRe__690797E6">
+          <End Role="stage" Type="Self.stage" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stage">
+              <PropertyRef Name="StageId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="StageRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__SuitAct__69FBBC1F">
+          <End Role="suitaction" Type="Self.suitaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="suitaction">
+              <PropertyRef Name="SuitActionID" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="SuitActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__SuitQua__6FB49575">
+          <End Role="suitqualityaction" Type="Self.suitqualityaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="suitqualityaction">
+              <PropertyRef Name="SuitQualityActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="SuitQualityActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__SystemR__681373AD">
+          <End Role="method" Type="Self.method" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="method">
+              <PropertyRef Name="MethodId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="MethodRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__Balanced__00DF2177">
+          <End Role="balancedaction" Type="Self.balancedaction" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="balancedaction">
+              <PropertyRef Name="BalancedActionId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="Balanced" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__BidBoxRef__7B264821">
+          <End Role="bidbox" Type="Self.bidbox" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bidbox">
+              <PropertyRef Name="BidBoxId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="BidBoxRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__Convention__7C1A6C5A">
+          <End Role="convention" Type="Self.convention" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="convention">
+              <PropertyRef Name="ConventionId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="ConventionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__FourCardMa__7FEAFD3E">
+          <End Role="fourcardmajoraction" Type="Self.fourcardmajoraction" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fourcardmajoraction">
+              <PropertyRef Name="FourCardMajorActionId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="FourCardMajorRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__ltcRef__7A3223E8">
+          <End Role="losingtrickcountrange" Type="Self.losingtrickcountrange" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="losingtrickcountrange">
+              <PropertyRef Name="ltcId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="ltcRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__PointRange__793DFFAF">
+          <End Role="pointrange" Type="Self.pointrange" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pointrange">
+              <PropertyRef Name="PointRangeId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="PointRangeRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__Protective__7D0E9093">
+          <End Role="protectiveaction" Type="Self.protectiveaction" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="protectiveaction">
+              <PropertyRef Name="ProtectiveActionId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="Protective" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__ShapeRef__7849DB76">
+          <End Role="shape" Type="Self.shape" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shape">
+              <PropertyRef Name="ShapeId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="ShapeRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__StageRef__7755B73D">
+          <End Role="stage" Type="Self.stage" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stage">
+              <PropertyRef Name="StageId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="StageRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__SuitQualit__7EF6D905">
+          <End Role="suitquality" Type="Self.suitquality" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="suitquality">
+              <PropertyRef Name="SuitQualityId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="SuitQualityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__SuitRef__76619304">
+          <End Role="suitname" Type="Self.suitname" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="suitname">
+              <PropertyRef Name="SuitNameId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="SuitRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__SystemRef__756D6ECB">
+          <End Role="method" Type="Self.method" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="method">
+              <PropertyRef Name="MethodId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="MethodRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_suitquality_ToTable">
+          <End Role="method" Type="Self.method" Multiplicity="1" />
+          <End Role="suitquality" Type="Self.suitquality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="method">
+              <PropertyRef Name="MethodId" />
+            </Principal>
+            <Dependent Role="suitquality">
+              <PropertyRef Name="MethodRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_ToTable">
+          <End Role="method" Type="Self.method" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="method">
+              <PropertyRef Name="MethodId" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="MethodRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dmBiddingModelStoreContainer">
+          <EntitySet Name="action" EntityType="Self.action" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="balancedaction" EntityType="Self.balancedaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="bid" EntityType="Self.bid" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="bidbox" EntityType="Self.bidbox" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="convention" EntityType="Self.convention" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fourcardmajoraction" EntityType="Self.fourcardmajoraction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="losingtrickcountrange" EntityType="Self.losingtrickcountrange" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ltcaction" EntityType="Self.ltcaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="method" EntityType="Self.method" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="opponentbidaction" EntityType="Self.opponentbidaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="partnerbidaction" EntityType="Self.partnerbidaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pointrange" EntityType="Self.pointrange" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="protectiveaction" EntityType="Self.protectiveaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="referencedsuit" EntityType="Self.referencedsuit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="setting" EntityType="Self.setting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shape" EntityType="Self.shape" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shapeaction" EntityType="Self.shapeaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shapedetail" EntityType="Self.shapedetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stage" EntityType="Self.stage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="suitaction" EntityType="Self.suitaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="suitname" EntityType="Self.suitname" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="suitquality" EntityType="Self.suitquality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="suitqualityaction" EntityType="Self.suitqualityaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__actions__Balance__719CDDE7" Association="Self.FK__actions__Balance__719CDDE7">
+            <End Role="balancedaction" EntitySet="balancedaction" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__Convent__6CD828CA" Association="Self.FK__actions__Convent__6CD828CA">
+            <End Role="convention" EntitySet="convention" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__FourCar__70A8B9AE" Association="Self.FK__actions__FourCar__70A8B9AE">
+            <End Role="fourcardmajoraction" EntitySet="fourcardmajoraction" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__ltcActi__72910220" Association="Self.FK__actions__ltcActi__72910220">
+            <End Role="ltcaction" EntitySet="ltcaction" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__Opponen__6DCC4D03" Association="Self.FK__actions__Opponen__6DCC4D03">
+            <End Role="opponentbidaction" EntitySet="opponentbidaction" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__Partner__6EC0713C" Association="Self.FK__actions__Partner__6EC0713C">
+            <End Role="partnerbidaction" EntitySet="partnerbidaction" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__Protect__6BE40491" Association="Self.FK__actions__Protect__6BE40491">
+            <End Role="protectiveaction" EntitySet="protectiveaction" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__ShapeAc__6AEFE058" Association="Self.FK__actions__ShapeAc__6AEFE058">
+            <End Role="shapeaction" EntitySet="shapeaction" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__StageRe__690797E6" Association="Self.FK__actions__StageRe__690797E6">
+            <End Role="stage" EntitySet="stage" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__SuitAct__69FBBC1F" Association="Self.FK__actions__SuitAct__69FBBC1F">
+            <End Role="suitaction" EntitySet="suitaction" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__SuitQua__6FB49575" Association="Self.FK__actions__SuitQua__6FB49575">
+            <End Role="suitqualityaction" EntitySet="suitqualityaction" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__SystemR__681373AD" Association="Self.FK__actions__SystemR__681373AD">
+            <End Role="method" EntitySet="method" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__Balanced__00DF2177" Association="Self.FK__bids__Balanced__00DF2177">
+            <End Role="balancedaction" EntitySet="balancedaction" />
+            <End Role="bid" EntitySet="bid" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__BidBoxRef__7B264821" Association="Self.FK__bids__BidBoxRef__7B264821">
+            <End Role="bidbox" EntitySet="bidbox" />
+            <End Role="bid" EntitySet="bid" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__Convention__7C1A6C5A" Association="Self.FK__bids__Convention__7C1A6C5A">
+            <End Role="convention" EntitySet="convention" />
+            <End Role="bid" EntitySet="bid" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__FourCardMa__7FEAFD3E" Association="Self.FK__bids__FourCardMa__7FEAFD3E">
+            <End Role="fourcardmajoraction" EntitySet="fourcardmajoraction" />
+            <End Role="bid" EntitySet="bid" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__ltcRef__7A3223E8" Association="Self.FK__bids__ltcRef__7A3223E8">
+            <End Role="losingtrickcountrange" EntitySet="losingtrickcountrange" />
+            <End Role="bid" EntitySet="bid" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__PointRange__793DFFAF" Association="Self.FK__bids__PointRange__793DFFAF">
+            <End Role="pointrange" EntitySet="pointrange" />
+            <End Role="bid" EntitySet="bid" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__Protective__7D0E9093" Association="Self.FK__bids__Protective__7D0E9093">
+            <End Role="protectiveaction" EntitySet="protectiveaction" />
+            <End Role="bid" EntitySet="bid" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__ShapeRef__7849DB76" Association="Self.FK__bids__ShapeRef__7849DB76">
+            <End Role="shape" EntitySet="shape" />
+            <End Role="bid" EntitySet="bid" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__StageRef__7755B73D" Association="Self.FK__bids__StageRef__7755B73D">
+            <End Role="stage" EntitySet="stage" />
+            <End Role="bid" EntitySet="bid" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__SuitQualit__7EF6D905" Association="Self.FK__bids__SuitQualit__7EF6D905">
+            <End Role="suitquality" EntitySet="suitquality" />
+            <End Role="bid" EntitySet="bid" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__SuitRef__76619304" Association="Self.FK__bids__SuitRef__76619304">
+            <End Role="suitname" EntitySet="suitname" />
+            <End Role="bid" EntitySet="bid" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__SystemRef__756D6ECB" Association="Self.FK__bids__SystemRef__756D6ECB">
+            <End Role="method" EntitySet="method" />
+            <End Role="bid" EntitySet="bid" />
+          </AssociationSet>
+          <AssociationSet Name="FK_suitquality_ToTable" Association="Self.FK_suitquality_ToTable">
+            <End Role="method" EntitySet="method" />
+            <End Role="suitquality" EntitySet="suitquality" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_ToTable" Association="Self.FK_user_ToTable">
+            <End Role="method" EntitySet="method" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dmBiddingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="action">
+          <Key>
+            <PropertyRef Name="ActionId" />
+          </Key>
+          <Property Name="ActionId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MethodRef" Type="Int32" />
+          <Property Name="StageRef" Type="Int32" />
+          <Property Name="Sequence" Type="Int32" Nullable="false" />
+          <Property Name="SuitActionRef" Type="Int32" />
+          <Property Name="ShapeActionRef" Type="Int32" />
+          <Property Name="ProtectiveActionRef" Type="Int32" />
+          <Property Name="ConventionRef" Type="Int32" />
+          <Property Name="OpponentBidActionRef" Type="Int32" />
+          <Property Name="PartnerBidActionRef" Type="Int32" />
+          <Property Name="SuitQualityActionRef" Type="Int32" />
+          <Property Name="FourCardMajorActionRef" Type="Int32" />
+          <Property Name="BalancedActionRef" Type="Int32" />
+          <Property Name="ltcActionRef" Type="Int32" />
+          <NavigationProperty Name="balancedaction" Relationship="Self.FK__actions__Balance__719CDDE7" FromRole="action" ToRole="balancedaction" />
+          <NavigationProperty Name="convention" Relationship="Self.FK__actions__Convent__6CD828CA" FromRole="action" ToRole="convention" />
+          <NavigationProperty Name="fourcardmajoraction" Relationship="Self.FK__actions__FourCar__70A8B9AE" FromRole="action" ToRole="fourcardmajoraction" />
+          <NavigationProperty Name="ltcaction" Relationship="Self.FK__actions__ltcActi__72910220" FromRole="action" ToRole="ltcaction" />
+          <NavigationProperty Name="opponentbidaction" Relationship="Self.FK__actions__Opponen__6DCC4D03" FromRole="action" ToRole="opponentbidaction" />
+          <NavigationProperty Name="partnerbidaction" Relationship="Self.FK__actions__Partner__6EC0713C" FromRole="action" ToRole="partnerbidaction" />
+          <NavigationProperty Name="protectiveaction" Relationship="Self.FK__actions__Protect__6BE40491" FromRole="action" ToRole="protectiveaction" />
+          <NavigationProperty Name="shapeaction" Relationship="Self.FK__actions__ShapeAc__6AEFE058" FromRole="action" ToRole="shapeaction" />
+          <NavigationProperty Name="stage" Relationship="Self.FK__actions__StageRe__690797E6" FromRole="action" ToRole="stage" />
+          <NavigationProperty Name="suitaction" Relationship="Self.FK__actions__SuitAct__69FBBC1F" FromRole="action" ToRole="suitaction" />
+          <NavigationProperty Name="suitqualityaction" Relationship="Self.FK__actions__SuitQua__6FB49575" FromRole="action" ToRole="suitqualityaction" />
+          <NavigationProperty Name="method" Relationship="Self.FK__actions__SystemR__681373AD" FromRole="action" ToRole="method" />
+        </EntityType>
+        <EntityType Name="balancedaction">
+          <Key>
+            <PropertyRef Name="BalancedActionId" />
+          </Key>
+          <Property Name="BalancedActionId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="actions" Relationship="Self.FK__actions__Balance__719CDDE7" FromRole="balancedaction" ToRole="action" />
+          <NavigationProperty Name="bids" Relationship="Self.FK__bids__Balanced__00DF2177" FromRole="balancedaction" ToRole="bid" />
+        </EntityType>
+        <EntityType Name="bid">
+          <Key>
+            <PropertyRef Name="BidId" />
+          </Key>
+          <Property Name="BidId" Type="Int32" Nullable="false" />
+          <Property Name="MethodRef" Type="Int32" />
+          <Property Name="BidName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SuitRef" Type="Int32" />
+          <Property Name="StageRef" Type="Int32" />
+          <Property Name="ShapeRef" Type="Int32" />
+          <Property Name="PointRangeRef" Type="Int32" />
+          <Property Name="ltcRef" Type="Int32" />
+          <Property Name="BidBoxRef" Type="Int32" />
+          <Property Name="ConventionRef" Type="Int32" />
+          <Property Name="Protective" Type="Int32" />
+          <Property Name="OpponentBidRef" Type="Int32" Nullable="false" />
+          <Property Name="PartnerBidRef" Type="Int32" Nullable="false" />
+          <Property Name="SuitQualityRef" Type="Int32" />
+          <Property Name="FourCardMajorRef" Type="Int32" />
+          <Property Name="Balanced" Type="Int32" />
+          <NavigationProperty Name="balancedaction" Relationship="Self.FK__bids__Balanced__00DF2177" FromRole="bid" ToRole="balancedaction" />
+          <NavigationProperty Name="bidbox" Relationship="Self.FK__bids__BidBoxRef__7B264821" FromRole="bid" ToRole="bidbox" />
+          <NavigationProperty Name="convention" Relationship="Self.FK__bids__Convention__7C1A6C5A" FromRole="bid" ToRole="convention" />
+          <NavigationProperty Name="fourcardmajoraction" Relationship="Self.FK__bids__FourCardMa__7FEAFD3E" FromRole="bid" ToRole="fourcardmajoraction" />
+          <NavigationProperty Name="losingtrickcountrange" Relationship="Self.FK__bids__ltcRef__7A3223E8" FromRole="bid" ToRole="losingtrickcountrange" />
+          <NavigationProperty Name="pointrange" Relationship="Self.FK__bids__PointRange__793DFFAF" FromRole="bid" ToRole="pointrange" />
+          <NavigationProperty Name="protectiveaction" Relationship="Self.FK__bids__Protective__7D0E9093" FromRole="bid" ToRole="protectiveaction" />
+          <NavigationProperty Name="shape" Relationship="Self.FK__bids__ShapeRef__7849DB76" FromRole="bid" ToRole="shape" />
+          <NavigationProperty Name="stage" Relationship="Self.FK__bids__StageRef__7755B73D" FromRole="bid" ToRole="stage" />
+          <NavigationProperty Name="suitquality" Relationship="Self.FK__bids__SuitQualit__7EF6D905" FromRole="bid" ToRole="suitquality" />
+          <NavigationProperty Name="suitname" Relationship="Self.FK__bids__SuitRef__76619304" FromRole="bid" ToRole="suitname" />
+          <NavigationProperty Name="method" Relationship="Self.FK__bids__SystemRef__756D6ECB" FromRole="bid" ToRole="method" />
+        </EntityType>
+        <EntityType Name="bidbox">
+          <Key>
+            <PropertyRef Name="BidBoxId" />
+          </Key>
+          <Property Name="BidBoxId" Type="Int32" Nullable="false" />
+          <Property Name="BidBoxName" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="bids" Relationship="Self.FK__bids__BidBoxRef__7B264821" FromRole="bidbox" ToRole="bid" />
+        </EntityType>
+        <EntityType Name="convention">
+          <Key>
+            <PropertyRef Name="ConventionId" />
+          </Key>
+          <Property Name="ConventionId" Type="Int32" Nullable="false" />
+          <Property Name="ConventionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="actions" Relationship="Self.FK__actions__Convent__6CD828CA" FromRole="convention" ToRole="action" />
+          <NavigationProperty Name="bids" Relationship="Self.FK__bids__Convention__7C1A6C5A" FromRole="convention" ToRole="bid" />
+        </EntityType>
+        <EntityType Name="fourcardmajoraction">
+          <Key>
+            <PropertyRef Name="FourCardMajorActionId" />
+          </Key>
+          <Property Name="FourCardMajorActionId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="actions" Relationship="Self.FK__actions__FourCar__70A8B9AE" FromRole="fourcardmajoraction" ToRole="action" />
+          <NavigationProperty Name="bids" Relationship="Self.FK__bids__FourCardMa__7FEAFD3E" FromRole="fourcardmajoraction" ToRole="bid" />
+        </EntityType>
+        <EntityType Name="losingtrickcountrange">
+          <Key>
+            <PropertyRef Name="ltcId" />
+          </Key>
+          <Property Name="ltcId" Type="Int32" Nullable="false" />
+          <Property Name="ltcDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Min" Type="Byte" Nullable="false" />
+          <Property Name="Max" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="bids" Relationship="Self.FK__bids__ltcRef__7A3223E8" FromRole="losingtrickcountrange" ToRole="bid" />
+        </EntityType>
+        <EntityType Name="ltcaction">
+          <Key>
+            <PropertyRef Name="ltcActionId" />
+          </Key>
+          <Property Name="ltcActionId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="512" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="actions" Relationship="Self.FK__actions__ltcActi__72910220" FromRole="ltcaction" ToRole="action" />
+        </EntityType>
+        <EntityType Name="method">
+          <Key>
+            <PropertyRef Name="MethodId" />
+          </Key>
+          <Property Name="MethodId" Type="Int32" Nullable="false" />
+          <Property Name="MethodName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MethodDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="actions" Relationship="Self.FK__actions__SystemR__681373AD" FromRole="method" ToRole="action" />
+          <NavigationProperty Name="bids" Relationship="Self.FK__bids__SystemRef__756D6ECB" FromRole="method" ToRole="bid" />
+          <NavigationProperty Name="suitqualities" Relationship="Self.FK_suitquality_ToTable" FromRole="method" ToRole="suitquality" />
+          <NavigationProperty Name="users" Relationship="Self.FK_user_ToTable" FromRole="method" ToRole="user" />
+        </EntityType>
+        <EntityType Name="opponentbidaction">
+          <Key>
+            <PropertyRef Name="OpponentBidActionId" />
+          </Key>
+          <Property Name="OpponentBidActionId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="actions" Relationship="Self.FK__actions__Opponen__6DCC4D03" FromRole="opponentbidaction" ToRole="action" />
+        </EntityType>
+        <EntityType Name="partnerbidaction">
+          <Key>
+            <PropertyRef Name="PartnerBidActionId" />
+          </Key>
+          <Property Name="PartnerBidActionId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="actions" Relationship="Self.FK__actions__Partner__6EC0713C" FromRole="partnerbidaction" ToRole="action" />
+        </EntityType>
+        <EntityType Name="pointrange">
+          <Key>
+            <PropertyRef Name="PointRangeId" />
+          </Key>
+          <Property Name="PointRangeId" Type="Int32" Nullable="false" />
+          <Property Name="PointRangeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Min" Type="Byte" Nullable="false" />
+          <Property Name="Max" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="bids" Relationship="Self.FK__bids__PointRange__793DFFAF" FromRole="pointrange" ToRole="bid" />
+        </EntityType>
+        <EntityType Name="protectiveaction">
+          <Key>
+            <PropertyRef Name="ProtectiveActionId" />
+          </Key>
+          <Property Name="ProtectiveActionId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="actions" Relationship="Self.FK__actions__Protect__6BE40491" FromRole="protectiveaction" ToRole="action" />
+          <NavigationProperty Name="bids" Relationship="Self.FK__bids__Protective__7D0E9093" FromRole="protectiveaction" ToRole="bid" />
+        </EntityType>
+        <EntityType Name="referencedsuit">
+          <Key>
+            <PropertyRef Name="ReferencedSuitId" />
+          </Key>
+          <Property Name="ReferencedSuitId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="setting">
+          <Key>
+            <PropertyRef Name="SettingsId" />
+          </Key>
+          <Property Name="SettingsId" Type="Int32" Nullable="false" />
+          <Property Name="UserRef" Type="Int32" Nullable="false" />
+          <Property Name="SettingName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SettingDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SettingValue" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shape">
+          <Key>
+            <PropertyRef Name="ShapeId" />
+          </Key>
+          <Property Name="ShapeId" Type="Int32" Nullable="false" />
+          <Property Name="ShapeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="bids" Relationship="Self.FK__bids__ShapeRef__7849DB76" FromRole="shape" ToRole="bid" />
+        </EntityType>
+        <EntityType Name="shapeaction">
+          <Key>
+            <PropertyRef Name="ShapeActionId" />
+          </Key>
+          <Property Name="ShapeActionId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="actions" Relationship="Self.FK__actions__ShapeAc__6AEFE058" FromRole="shapeaction" ToRole="action" />
+        </EntityType>
+        <EntityType Name="shapedetail">
+          <Key>
+            <PropertyRef Name="ShapeDetailID" />
+          </Key>
+          <Property Name="ShapeDetailID" Type="Int32" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ShapeRef" Type="Int32" Nullable="false" />
+          <Property Name="ShapeSuit" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stage">
+          <Key>
+            <PropertyRef Name="StageId" />
+          </Key>
+          <Property Name="StageId" Type="Int32" Nullable="false" />
+          <Property Name="StageDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="actions" Relationship="Self.FK__actions__StageRe__690797E6" FromRole="stage" ToRole="action" />
+          <NavigationProperty Name="bids" Relationship="Self.FK__bids__StageRef__7755B73D" FromRole="stage" ToRole="bid" />
+        </EntityType>
+        <EntityType Name="suitaction">
+          <Key>
+            <PropertyRef Name="SuitActionID" />
+          </Key>
+          <Property Name="SuitActionID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="actions" Relationship="Self.FK__actions__SuitAct__69FBBC1F" FromRole="suitaction" ToRole="action" />
+        </EntityType>
+        <EntityType Name="suitname">
+          <Key>
+            <PropertyRef Name="SuitNameId" />
+          </Key>
+          <Property Name="SuitNameId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="bids" Relationship="Self.FK__bids__SuitRef__76619304" FromRole="suitname" ToRole="bid" />
+        </EntityType>
+        <EntityType Name="suitquality">
+          <Key>
+            <PropertyRef Name="SuitQualityId" />
+          </Key>
+          <Property Name="SuitQualityId" Type="Int32" Nullable="false" />
+          <Property Name="MethodRef" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SuitHCP" Type="Int32" Nullable="false" />
+          <Property Name="NumberHons" Type="Int32" Nullable="false" />
+          <Property Name="ReferencedSuitRef" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="bids" Relationship="Self.FK__bids__SuitQualit__7EF6D905" FromRole="suitquality" ToRole="bid" />
+          <NavigationProperty Name="method" Relationship="Self.FK_suitquality_ToTable" FromRole="suitquality" ToRole="method" />
+        </EntityType>
+        <EntityType Name="suitqualityaction">
+          <Key>
+            <PropertyRef Name="SuitQualityActionId" />
+          </Key>
+          <Property Name="SuitQualityActionId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="actions" Relationship="Self.FK__actions__SuitQua__6FB49575" FromRole="suitqualityaction" ToRole="action" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MethodRef" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="method" Relationship="Self.FK_user_ToTable" FromRole="user" ToRole="method" />
+        </EntityType>
+        <Association Name="FK__actions__Balance__719CDDE7">
+          <End Role="balancedaction" Type="Self.balancedaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="balancedaction">
+              <PropertyRef Name="BalancedActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="BalancedActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__Convent__6CD828CA">
+          <End Role="convention" Type="Self.convention" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="convention">
+              <PropertyRef Name="ConventionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="ConventionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__FourCar__70A8B9AE">
+          <End Role="fourcardmajoraction" Type="Self.fourcardmajoraction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fourcardmajoraction">
+              <PropertyRef Name="FourCardMajorActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="FourCardMajorActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__ltcActi__72910220">
+          <End Role="ltcaction" Type="Self.ltcaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ltcaction">
+              <PropertyRef Name="ltcActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="ltcActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__Opponen__6DCC4D03">
+          <End Role="opponentbidaction" Type="Self.opponentbidaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opponentbidaction">
+              <PropertyRef Name="OpponentBidActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="OpponentBidActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__Partner__6EC0713C">
+          <End Role="partnerbidaction" Type="Self.partnerbidaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="partnerbidaction">
+              <PropertyRef Name="PartnerBidActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="PartnerBidActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__Protect__6BE40491">
+          <End Role="protectiveaction" Type="Self.protectiveaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="protectiveaction">
+              <PropertyRef Name="ProtectiveActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="ProtectiveActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__ShapeAc__6AEFE058">
+          <End Role="shapeaction" Type="Self.shapeaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shapeaction">
+              <PropertyRef Name="ShapeActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="ShapeActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__StageRe__690797E6">
+          <End Role="stage" Type="Self.stage" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stage">
+              <PropertyRef Name="StageId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="StageRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__SuitAct__69FBBC1F">
+          <End Role="suitaction" Type="Self.suitaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="suitaction">
+              <PropertyRef Name="SuitActionID" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="SuitActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__SuitQua__6FB49575">
+          <End Role="suitqualityaction" Type="Self.suitqualityaction" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="suitqualityaction">
+              <PropertyRef Name="SuitQualityActionId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="SuitQualityActionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__actions__SystemR__681373AD">
+          <End Role="method" Type="Self.method" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="method">
+              <PropertyRef Name="MethodId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="MethodRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__Balanced__00DF2177">
+          <End Role="balancedaction" Type="Self.balancedaction" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="balancedaction">
+              <PropertyRef Name="BalancedActionId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="Balanced" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__BidBoxRef__7B264821">
+          <End Role="bidbox" Type="Self.bidbox" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bidbox">
+              <PropertyRef Name="BidBoxId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="BidBoxRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__Convention__7C1A6C5A">
+          <End Role="convention" Type="Self.convention" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="convention">
+              <PropertyRef Name="ConventionId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="ConventionRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__FourCardMa__7FEAFD3E">
+          <End Role="fourcardmajoraction" Type="Self.fourcardmajoraction" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fourcardmajoraction">
+              <PropertyRef Name="FourCardMajorActionId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="FourCardMajorRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__ltcRef__7A3223E8">
+          <End Role="losingtrickcountrange" Type="Self.losingtrickcountrange" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="losingtrickcountrange">
+              <PropertyRef Name="ltcId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="ltcRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__PointRange__793DFFAF">
+          <End Role="pointrange" Type="Self.pointrange" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pointrange">
+              <PropertyRef Name="PointRangeId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="PointRangeRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__Protective__7D0E9093">
+          <End Role="protectiveaction" Type="Self.protectiveaction" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="protectiveaction">
+              <PropertyRef Name="ProtectiveActionId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="Protective" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__ShapeRef__7849DB76">
+          <End Role="shape" Type="Self.shape" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shape">
+              <PropertyRef Name="ShapeId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="ShapeRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__StageRef__7755B73D">
+          <End Role="stage" Type="Self.stage" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stage">
+              <PropertyRef Name="StageId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="StageRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__SuitQualit__7EF6D905">
+          <End Role="suitquality" Type="Self.suitquality" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="suitquality">
+              <PropertyRef Name="SuitQualityId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="SuitQualityRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__SuitRef__76619304">
+          <End Role="suitname" Type="Self.suitname" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="suitname">
+              <PropertyRef Name="SuitNameId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="SuitRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bids__SystemRef__756D6ECB">
+          <End Role="method" Type="Self.method" Multiplicity="0..1" />
+          <End Role="bid" Type="Self.bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="method">
+              <PropertyRef Name="MethodId" />
+            </Principal>
+            <Dependent Role="bid">
+              <PropertyRef Name="MethodRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_suitquality_ToTable">
+          <End Role="method" Type="Self.method" Multiplicity="1" />
+          <End Role="suitquality" Type="Self.suitquality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="method">
+              <PropertyRef Name="MethodId" />
+            </Principal>
+            <Dependent Role="suitquality">
+              <PropertyRef Name="MethodRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_ToTable">
+          <End Role="method" Type="Self.method" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="method">
+              <PropertyRef Name="MethodId" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="MethodRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dmBiddingEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="actions" EntityType="Self.action" />
+          <EntitySet Name="balancedactions" EntityType="Self.balancedaction" />
+          <EntitySet Name="bids" EntityType="Self.bid" />
+          <EntitySet Name="bidboxes" EntityType="Self.bidbox" />
+          <EntitySet Name="conventions" EntityType="Self.convention" />
+          <EntitySet Name="fourcardmajoractions" EntityType="Self.fourcardmajoraction" />
+          <EntitySet Name="losingtrickcountranges" EntityType="Self.losingtrickcountrange" />
+          <EntitySet Name="ltcactions" EntityType="Self.ltcaction" />
+          <EntitySet Name="methods" EntityType="Self.method" />
+          <EntitySet Name="opponentbidactions" EntityType="Self.opponentbidaction" />
+          <EntitySet Name="partnerbidactions" EntityType="Self.partnerbidaction" />
+          <EntitySet Name="pointranges" EntityType="Self.pointrange" />
+          <EntitySet Name="protectiveactions" EntityType="Self.protectiveaction" />
+          <EntitySet Name="referencedsuits" EntityType="Self.referencedsuit" />
+          <EntitySet Name="settings" EntityType="Self.setting" />
+          <EntitySet Name="shapes" EntityType="Self.shape" />
+          <EntitySet Name="shapeactions" EntityType="Self.shapeaction" />
+          <EntitySet Name="shapedetails" EntityType="Self.shapedetail" />
+          <EntitySet Name="stages" EntityType="Self.stage" />
+          <EntitySet Name="suitactions" EntityType="Self.suitaction" />
+          <EntitySet Name="suitnames" EntityType="Self.suitname" />
+          <EntitySet Name="suitqualities" EntityType="Self.suitquality" />
+          <EntitySet Name="suitqualityactions" EntityType="Self.suitqualityaction" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <AssociationSet Name="FK__actions__Balance__719CDDE7" Association="Self.FK__actions__Balance__719CDDE7">
+            <End Role="balancedaction" EntitySet="balancedactions" />
+            <End Role="action" EntitySet="actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__Convent__6CD828CA" Association="Self.FK__actions__Convent__6CD828CA">
+            <End Role="convention" EntitySet="conventions" />
+            <End Role="action" EntitySet="actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__FourCar__70A8B9AE" Association="Self.FK__actions__FourCar__70A8B9AE">
+            <End Role="fourcardmajoraction" EntitySet="fourcardmajoractions" />
+            <End Role="action" EntitySet="actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__ltcActi__72910220" Association="Self.FK__actions__ltcActi__72910220">
+            <End Role="ltcaction" EntitySet="ltcactions" />
+            <End Role="action" EntitySet="actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__Opponen__6DCC4D03" Association="Self.FK__actions__Opponen__6DCC4D03">
+            <End Role="opponentbidaction" EntitySet="opponentbidactions" />
+            <End Role="action" EntitySet="actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__Partner__6EC0713C" Association="Self.FK__actions__Partner__6EC0713C">
+            <End Role="partnerbidaction" EntitySet="partnerbidactions" />
+            <End Role="action" EntitySet="actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__Protect__6BE40491" Association="Self.FK__actions__Protect__6BE40491">
+            <End Role="protectiveaction" EntitySet="protectiveactions" />
+            <End Role="action" EntitySet="actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__ShapeAc__6AEFE058" Association="Self.FK__actions__ShapeAc__6AEFE058">
+            <End Role="shapeaction" EntitySet="shapeactions" />
+            <End Role="action" EntitySet="actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__StageRe__690797E6" Association="Self.FK__actions__StageRe__690797E6">
+            <End Role="stage" EntitySet="stages" />
+            <End Role="action" EntitySet="actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__SuitAct__69FBBC1F" Association="Self.FK__actions__SuitAct__69FBBC1F">
+            <End Role="suitaction" EntitySet="suitactions" />
+            <End Role="action" EntitySet="actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__SuitQua__6FB49575" Association="Self.FK__actions__SuitQua__6FB49575">
+            <End Role="suitqualityaction" EntitySet="suitqualityactions" />
+            <End Role="action" EntitySet="actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__actions__SystemR__681373AD" Association="Self.FK__actions__SystemR__681373AD">
+            <End Role="method" EntitySet="methods" />
+            <End Role="action" EntitySet="actions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__Balanced__00DF2177" Association="Self.FK__bids__Balanced__00DF2177">
+            <End Role="balancedaction" EntitySet="balancedactions" />
+            <End Role="bid" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__BidBoxRef__7B264821" Association="Self.FK__bids__BidBoxRef__7B264821">
+            <End Role="bidbox" EntitySet="bidboxes" />
+            <End Role="bid" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__Convention__7C1A6C5A" Association="Self.FK__bids__Convention__7C1A6C5A">
+            <End Role="convention" EntitySet="conventions" />
+            <End Role="bid" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__FourCardMa__7FEAFD3E" Association="Self.FK__bids__FourCardMa__7FEAFD3E">
+            <End Role="fourcardmajoraction" EntitySet="fourcardmajoractions" />
+            <End Role="bid" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__ltcRef__7A3223E8" Association="Self.FK__bids__ltcRef__7A3223E8">
+            <End Role="losingtrickcountrange" EntitySet="losingtrickcountranges" />
+            <End Role="bid" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__PointRange__793DFFAF" Association="Self.FK__bids__PointRange__793DFFAF">
+            <End Role="pointrange" EntitySet="pointranges" />
+            <End Role="bid" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__Protective__7D0E9093" Association="Self.FK__bids__Protective__7D0E9093">
+            <End Role="protectiveaction" EntitySet="protectiveactions" />
+            <End Role="bid" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__ShapeRef__7849DB76" Association="Self.FK__bids__ShapeRef__7849DB76">
+            <End Role="shape" EntitySet="shapes" />
+            <End Role="bid" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__StageRef__7755B73D" Association="Self.FK__bids__StageRef__7755B73D">
+            <End Role="stage" EntitySet="stages" />
+            <End Role="bid" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__SuitQualit__7EF6D905" Association="Self.FK__bids__SuitQualit__7EF6D905">
+            <End Role="suitquality" EntitySet="suitqualities" />
+            <End Role="bid" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__SuitRef__76619304" Association="Self.FK__bids__SuitRef__76619304">
+            <End Role="suitname" EntitySet="suitnames" />
+            <End Role="bid" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bids__SystemRef__756D6ECB" Association="Self.FK__bids__SystemRef__756D6ECB">
+            <End Role="method" EntitySet="methods" />
+            <End Role="bid" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK_suitquality_ToTable" Association="Self.FK_suitquality_ToTable">
+            <End Role="method" EntitySet="methods" />
+            <End Role="suitquality" EntitySet="suitqualities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_ToTable" Association="Self.FK_user_ToTable">
+            <End Role="method" EntitySet="methods" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dmBiddingModelStoreContainer" CdmEntityContainer="dmBiddingEntities4">
+          <EntitySetMapping Name="actions">
+            <EntityTypeMapping TypeName="dmBiddingModel.action">
+              <MappingFragment StoreEntitySet="action">
+                <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="MethodRef" ColumnName="MethodRef" />
+                <ScalarProperty Name="StageRef" ColumnName="StageRef" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="SuitActionRef" ColumnName="SuitActionRef" />
+                <ScalarProperty Name="ShapeActionRef" ColumnName="ShapeActionRef" />
+                <ScalarProperty Name="ProtectiveActionRef" ColumnName="ProtectiveActionRef" />
+                <ScalarProperty Name="ConventionRef" ColumnName="ConventionRef" />
+                <ScalarProperty Name="OpponentBidActionRef" ColumnName="OpponentBidActionRef" />
+                <ScalarProperty Name="PartnerBidActionRef" ColumnName="PartnerBidActionRef" />
+                <ScalarProperty Name="SuitQualityActionRef" ColumnName="SuitQualityActionRef" />
+                <ScalarProperty Name="FourCardMajorActionRef" ColumnName="FourCardMajorActionRef" />
+                <ScalarProperty Name="BalancedActionRef" ColumnName="BalancedActionRef" />
+                <ScalarProperty Name="ltcActionRef" ColumnName="ltcActionRef" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="balancedactions">
+            <EntityTypeMapping TypeName="dmBiddingModel.balancedaction">
+              <MappingFragment StoreEntitySet="balancedaction">
+                <ScalarProperty Name="BalancedActionId" ColumnName="BalancedActionId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bids">
+            <EntityTypeMapping TypeName="dmBiddingModel.bid">
+              <MappingFragment StoreEntitySet="bid">
+                <ScalarProperty Name="BidId" ColumnName="BidId" />
+                <ScalarProperty Name="MethodRef" ColumnName="MethodRef" />
+                <ScalarProperty Name="BidName" ColumnName="BidName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SuitRef" ColumnName="SuitRef" />
+                <ScalarProperty Name="StageRef" ColumnName="StageRef" />
+                <ScalarProperty Name="ShapeRef" ColumnName="ShapeRef" />
+                <ScalarProperty Name="PointRangeRef" ColumnName="PointRangeRef" />
+                <ScalarProperty Name="ltcRef" ColumnName="ltcRef" />
+                <ScalarProperty Name="BidBoxRef" ColumnName="BidBoxRef" />
+                <ScalarProperty Name="ConventionRef" ColumnName="ConventionRef" />
+                <ScalarProperty Name="Protective" ColumnName="Protective" />
+                <ScalarProperty Name="OpponentBidRef" ColumnName="OpponentBidRef" />
+                <ScalarProperty Name="PartnerBidRef" ColumnName="PartnerBidRef" />
+                <ScalarProperty Name="SuitQualityRef" ColumnName="SuitQualityRef" />
+                <ScalarProperty Name="FourCardMajorRef" ColumnName="FourCardMajorRef" />
+                <ScalarProperty Name="Balanced" ColumnName="Balanced" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bidboxes">
+            <EntityTypeMapping TypeName="dmBiddingModel.bidbox">
+              <MappingFragment StoreEntitySet="bidbox">
+                <ScalarProperty Name="BidBoxId" ColumnName="BidBoxId" />
+                <ScalarProperty Name="BidBoxName" ColumnName="BidBoxName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="conventions">
+            <EntityTypeMapping TypeName="dmBiddingModel.convention">
+              <MappingFragment StoreEntitySet="convention">
+                <ScalarProperty Name="ConventionId" ColumnName="ConventionId" />
+                <ScalarProperty Name="ConventionName" ColumnName="ConventionName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fourcardmajoractions">
+            <EntityTypeMapping TypeName="dmBiddingModel.fourcardmajoraction">
+              <MappingFragment StoreEntitySet="fourcardmajoraction">
+                <ScalarProperty Name="FourCardMajorActionId" ColumnName="FourCardMajorActionId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="losingtrickcountranges">
+            <EntityTypeMapping TypeName="dmBiddingModel.losingtrickcountrange">
+              <MappingFragment StoreEntitySet="losingtrickcountrange">
+                <ScalarProperty Name="ltcId" ColumnName="ltcId" />
+                <ScalarProperty Name="ltcDescription" ColumnName="ltcDescription" />
+                <ScalarProperty Name="Min" ColumnName="Min" />
+                <ScalarProperty Name="Max" ColumnName="Max" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ltcactions">
+            <EntityTypeMapping TypeName="dmBiddingModel.ltcaction">
+              <MappingFragment StoreEntitySet="ltcaction">
+                <ScalarProperty Name="ltcActionId" ColumnName="ltcActionId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="methods">
+            <EntityTypeMapping TypeName="dmBiddingModel.method">
+              <MappingFragment StoreEntitySet="method">
+                <ScalarProperty Name="MethodId" ColumnName="MethodId" />
+                <ScalarProperty Name="MethodName" ColumnName="MethodName" />
+                <ScalarProperty Name="MethodDescription" ColumnName="MethodDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="opponentbidactions">
+            <EntityTypeMapping TypeName="dmBiddingModel.opponentbidaction">
+              <MappingFragment StoreEntitySet="opponentbidaction">
+                <ScalarProperty Name="OpponentBidActionId" ColumnName="OpponentBidActionId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="partnerbidactions">
+            <EntityTypeMapping TypeName="dmBiddingModel.partnerbidaction">
+              <MappingFragment StoreEntitySet="partnerbidaction">
+                <ScalarProperty Name="PartnerBidActionId" ColumnName="PartnerBidActionId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pointranges">
+            <EntityTypeMapping TypeName="dmBiddingModel.pointrange">
+              <MappingFragment StoreEntitySet="pointrange">
+                <ScalarProperty Name="PointRangeId" ColumnName="PointRangeId" />
+                <ScalarProperty Name="PointRangeDescription" ColumnName="PointRangeDescription" />
+                <ScalarProperty Name="Min" ColumnName="Min" />
+                <ScalarProperty Name="Max" ColumnName="Max" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="protectiveactions">
+            <EntityTypeMapping TypeName="dmBiddingModel.protectiveaction">
+              <MappingFragment StoreEntitySet="protectiveaction">
+                <ScalarProperty Name="ProtectiveActionId" ColumnName="ProtectiveActionId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="referencedsuits">
+            <EntityTypeMapping TypeName="dmBiddingModel.referencedsuit">
+              <MappingFragment StoreEntitySet="referencedsuit">
+                <ScalarProperty Name="ReferencedSuitId" ColumnName="ReferencedSuitId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="settings">
+            <EntityTypeMapping TypeName="dmBiddingModel.setting">
+              <MappingFragment StoreEntitySet="setting">
+                <ScalarProperty Name="SettingsId" ColumnName="SettingsId" />
+                <ScalarProperty Name="UserRef" ColumnName="UserRef" />
+                <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+                <ScalarProperty Name="SettingDescription" ColumnName="SettingDescription" />
+                <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shapes">
+            <EntityTypeMapping TypeName="dmBiddingModel.shape">
+              <MappingFragment StoreEntitySet="shape">
+                <ScalarProperty Name="ShapeId" ColumnName="ShapeId" />
+                <ScalarProperty Name="ShapeDescription" ColumnName="ShapeDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shapeactions">
+            <EntityTypeMapping TypeName="dmBiddingModel.shapeaction">
+              <MappingFragment StoreEntitySet="shapeaction">
+                <ScalarProperty Name="ShapeActionId" ColumnName="ShapeActionId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shapedetails">
+            <EntityTypeMapping TypeName="dmBiddingModel.shapedetail">
+              <MappingFragment StoreEntitySet="shapedetail">
+                <ScalarProperty Name="ShapeDetailID" ColumnName="ShapeDetailID" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ShapeRef" ColumnName="ShapeRef" />
+                <ScalarProperty Name="ShapeSuit" ColumnName="ShapeSuit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stages">
+            <EntityTypeMapping TypeName="dmBiddingModel.stage">
+              <MappingFragment StoreEntitySet="stage">
+                <ScalarProperty Name="StageId" ColumnName="StageId" />
+                <ScalarProperty Name="StageDescription" ColumnName="StageDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="suitactions">
+            <EntityTypeMapping TypeName="dmBiddingModel.suitaction">
+              <MappingFragment StoreEntitySet="suitaction">
+                <ScalarProperty Name="SuitActionID" ColumnName="SuitActionID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="suitnames">
+            <EntityTypeMapping TypeName="dmBiddingModel.suitname">
+              <MappingFragment StoreEntitySet="suitname">
+                <ScalarProperty Name="SuitNameId" ColumnName="SuitNameId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="suitqualities">
+            <EntityTypeMapping TypeName="dmBiddingModel.suitquality">
+              <MappingFragment StoreEntitySet="suitquality">
+                <ScalarProperty Name="SuitQualityId" ColumnName="SuitQualityId" />
+                <ScalarProperty Name="MethodRef" ColumnName="MethodRef" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SuitHCP" ColumnName="SuitHCP" />
+                <ScalarProperty Name="NumberHons" ColumnName="NumberHons" />
+                <ScalarProperty Name="ReferencedSuitRef" ColumnName="ReferencedSuitRef" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="suitqualityactions">
+            <EntityTypeMapping TypeName="dmBiddingModel.suitqualityaction">
+              <MappingFragment StoreEntitySet="suitqualityaction">
+                <ScalarProperty Name="SuitQualityActionId" ColumnName="SuitQualityActionId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="dmBiddingModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MethodRef" ColumnName="MethodRef" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

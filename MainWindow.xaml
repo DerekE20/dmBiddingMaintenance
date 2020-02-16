@@ -1,0 +1,85 @@
+﻿<Window
+  x:Class="xBiddingMaintenance_1.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:vm="clr-namespace:xBiddingMaintenance_1.ViewModel"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:local="clr-namespace:xBiddingMaintenance_1"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  FontSize="13" 
+  FontFamily="Verdana"
+  MinWidth="650" MinHeight="420"
+  Title="{Binding Path=DisplayName}"
+  Width="1800" Height="840"
+  WindowStartupLocation="CenterScreen"
+  mc:Ignorable="d"
+    
+    >
+
+    <Window.Resources>
+       <ResourceDictionary>
+            <CollectionViewSource x:Key="stageViewSource" d:DesignSource="{d:DesignInstance {x:Type local:stage}, CreateList=True}"/>
+            <CollectionViewSource x:Key="actionViewSource" d:DesignSource="{d:DesignInstance {x:Type local:action}, CreateList=True}"/>
+            <CollectionViewSource x:Key="bidViewSource" d:DesignSource="{d:DesignInstance {x:Type local:bid}, CreateList=True}"/>
+            <CollectionViewSource x:Key="methodViewSource" d:DesignSource="{d:DesignInstance {x:Type local:method}, CreateList=True}"/>
+
+            <CollectionViewSource x:Key="bidstagesViewSource" Source="{Binding bids, Source={StaticResource stageViewSource}}"                             />
+            <CollectionViewSource x:Key="methodactionsViewSource" Source="{Binding actions, Source={StaticResource methodViewSource}}"/>
+            <CollectionViewSource x:Key="methodbidsViewSource" Source="{Binding bids, Source={StaticResource methodViewSource}}"/>
+
+          
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="MainWindowResources.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+ 
+            
+            
+        </ResourceDictionary>
+    </Window.Resources>
+
+  <DockPanel>
+    <DockPanel DockPanel.Dock="Top" KeyboardNavigation.TabNavigation="None">
+      <Menu KeyboardNavigation.TabNavigation="Cycle">
+        <MenuItem Header="_File">
+          <MenuItem Header="E_xit" Command="{Binding Path=CloseCommand}" />
+        </MenuItem>
+        <MenuItem Header="_Edit" />
+        <MenuItem Header="_Options" />
+        <MenuItem Header="_Help" />
+      </Menu>
+    </DockPanel>
+
+    <Grid Margin="4">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="4" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <Border 
+        Grid.Column="0" 
+        Style="{StaticResource MainBorderStyle}"
+        Width="170"
+        >
+        <HeaderedContentControl
+          Content="{Binding Path=Commands}"
+          ContentTemplate="{StaticResource CommandsTemplate}"
+          Header="Control Panel"
+          Style="{StaticResource MainHCCStyle}"
+          />
+      </Border>
+
+      <Border
+        Grid.Column="2" 
+        Style="{StaticResource MainBorderStyle}"
+        >
+        <HeaderedContentControl 
+          Content="{Binding Path=Workspaces}"
+          ContentTemplate="{StaticResource WorkspacesTemplate}"
+          Header="Workspaces"
+          Style="{StaticResource MainHCCStyle}"
+          />
+      </Border>
+    </Grid>
+  </DockPanel>
+</Window>
